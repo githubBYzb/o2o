@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css"
+          href="../../../resources/css/common/easyui.css">
+    <link rel="stylesheet" type="text/css"
+          href="../../../resources/css/common/icon.css">
+    <script type="text/javascript"
+            src="../../../resources/js/common/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript"
+            src="../../../resources/js/common/jquery.easyui.min.js"></script>
+    <script type="text/javascript"
+            src="../../../resources/js/common/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript"
+            src="../../../resources/js/shop/base/commonutil.js"></script>
+    <link rel="stylesheet"
+          href="../../../resources/css/common/tooltip-form-style.css">
+    <script type="text/javascript"
+            src="../../../resources/js/common/errorhandle.js"></script>
+    <script type="text/javascript" src="../../../resources/js/frontend/login.js"></script>
+    <title>登录页</title>
+</head>
+<body>
+<div id="login" style="padding: 5px; width: 400px; height: 220px;">
+    <table onkeydown="if(event.keyCode===13){doLogin();}" id="loginTable">
+        <tr>
+            <td align="right"><b style="font: 12px">用户名：</b></td>
+            <td><label for="userName"></label><input type="text" class="easyui-validatebox" id="userName"
+                                                     style="width: 200px;" maxlength="20" required="true"/></td>
+        </tr>
+        <tr>
+            <td align="right"><b style="font:12px">密码：</b></td>
+            <td><label for="password"></label><input type="password" class="easyui-validatebox"
+                                                     id="password" style="width: 200px;" maxlength="20"
+                                                     required="true"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="login_msg" style="color: red; font: 12px">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><a class="easyui-linkbutton" icon="icon-ok" onclick="doLogin();">登录</a>
+                <a  class="easyui-linkbutton" icon="icon-redo" onclick="doReset();">重置</a></td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>

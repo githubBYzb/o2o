@@ -1,0 +1,26 @@
+2018-07-04 01:21:41.652 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,?; 
+2018-07-04 01:21:41.690 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==> Parameters: 1(Long), 0(Integer), 2(Integer)
+2018-07-04 01:21:41.714 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-<==      Total: 0
+2018-07-04 01:21:41.723 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-07-04 01:21:41.725 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==> Parameters: 1(Long)
+2018-07-04 01:21:41.727 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-<==      Total: 1
+2018-07-04 01:21:41.729 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,?; 
+2018-07-04 01:21:41.729 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==> Parameters: 3(Long), 1(Long), 0(Integer), 2(Integer)
+2018-07-04 01:21:41.730 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-<==      Total: 0
+2018-07-04 01:21:41.731 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-07-04 01:21:41.731 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==> Parameters: 3(Long), 1(Long)
+2018-07-04 01:21:41.732 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-<==      Total: 1
+2018-07-04 01:22:14.269 [main] DEBUG com.test.o2o.dao.ShopDao.insertShop-==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status,advice) VALUES (?,?,?,?,?,?,?,?,?,?, ?,?,?) 
+2018-07-04 01:22:14.310 [main] DEBUG com.test.o2o.dao.ShopDao.insertShop-==> Parameters: 1(Long), 2(Integer), 1(Long), 测试店铺(String), test(String), test(String), test(String), test(String), null, 2018-07-04 01:22:14.027(Timestamp), null, 1(Integer), 审核中(String)
+2018-07-04 01:23:07.035 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,?; 
+2018-07-04 01:23:07.074 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==> Parameters: 1(Long), 0(Integer), 2(Integer)
+2018-07-04 01:23:07.094 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-<==      Total: 0
+2018-07-04 01:23:07.102 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-07-04 01:23:07.102 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==> Parameters: 1(Long)
+2018-07-04 01:23:07.105 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-<==      Total: 1
+2018-07-04 01:23:07.107 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,?; 
+2018-07-04 01:23:07.108 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-==> Parameters: 3(Long), 1(Long), 0(Integer), 2(Integer)
+2018-07-04 01:23:07.109 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopList-<==      Total: 0
+2018-07-04 01:23:07.110 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-07-04 01:23:07.111 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-==> Parameters: 3(Long), 1(Long)
+2018-07-04 01:23:07.113 [main] DEBUG com.test.o2o.dao.ShopDao.queryShopCount-<==      Total: 1

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>商铺信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="../../../resources/css/frontend/shoplist.css">
+
+
+</head>
+
+
+<body>
+
+<div class="page-group">
+    <div class="page">
+        <header class="bar bar-nav">
+            <button class="button button-link button-nav pull-left">
+                <span class="icon icon-left"></span><a href="../frontend/index.html" external>返回</a>
+            </button>
+            <h1 class="title" id="haha">商店列表</h1>
+        </header>
+
+        <div class="bar bar-header-secondary">
+            <div class="searchbar">
+                <a class="searchbar-cancel">取消</a>
+                <div class="search-input">
+                    <label class="icon icon-search" for="search"></label>
+                    <input type="search" id='search' placeholder='输入关键字...'/>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bar bar-tab">
+            <a class="tab-item external " href="../frontend/index.html"  >
+                <span class="icon icon-home"></span>
+                <span class="tab-label"> 首页</span>
+            </a>
+            <a class="tab-item external" href="#">
+                <span class="icon icon-me"></span>
+                <span class="tab-label">我</span>
+            </a>
+        </nav>
+
+        <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+
+
+            <div class="shoplist-button-div" id="shoplist-search-div">
+
+            </div>
+
+
+            <div class="select-wrap">
+
+                <select class="select" id="area-search">
+
+                </select>
+            </div>
+
+            <div class="list-div shop-list">
+
+
+            </div>
+            <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type='text/javascript'
+        src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+        src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+        src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../../../resources/js/common/common.js'
+        charset='utf-8'></script>
+<script type='text/javascript' src='../../../resources/js/frontend/shoplist.js'
+        charset='utf-8'></script>
+
+
+</body>
+</html>

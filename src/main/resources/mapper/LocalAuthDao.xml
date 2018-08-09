@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.o2o.dao.LocalAuthDao">
+    <resultMap id="localAuthResultMap" type="com.test.o2o.entity.LocalAuth">
+        <id column="local_auth_id" property="localAuthId"/>
+        <!--<id column="user_id" property="userId"/>-->
+        <result column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_edit_time" property="lastEditTime"/>
+        <association property="personInfo" column="user_id" javaType="com.test.o2o.entity.PersonInfo">
+            <id column="user_id" property="userId"/>
+            <result column="name" property="name"/>
+            <result column="gender" property="gender"/>
+            <result column="email" property="email"/>
+            <result column="profile_img" property="profileImg"/>
+            <result column="user_type" property="userType"/>
+            <result column="create_time" property="createTime"/>
+            <result column="last_edit_time" property="lastEditTime"/>
+            <result column="enable_status" property="enableStatus"/>
+        </association>
+    </resultMap>
+    <select id="queryLocalAuthPwdByUserName" resultMap="localAuthResultMap" parameterType="String">
+        SELECT
+            *
+        FROM
+            tb_local_auth l
+            LEFT JOIN
+            tb_person_info p
+            ON l.user_id = p.user_id
+        WHERE
+            l.local_auth_id =#{userName}
+    </select>
+
+
+   <update id="updataLocalAuthId">
+       update
+           tb_local_auth
+       set
+           local_auth_id = #{newcount}
+       where
+           local_auth_id = #{oldcount}
+   </update>
+
+    <update id="updatepwd">
+        update
+            tb_local_auth
+        set
+            password = #{newpwd}
+        where
+            password = #{oldpwd}
+        and local_auth_id = #{count}
+    </update>
+
+    <update id="updateUsername">
+        update
+            tb_local_auth
+        set
+            username = #{newname}
+        where
+            username = #{oldname}
+    </update>
+
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.o2o.dao.PersonInfoDao">
+    <select id="queryPersonInfoList" resultType="com.test.o2o.entity.PersonInfo">
+        SELECT *
+        FROM
+        tb_person_info
+    </select>
+
+    <select id="queryPersonInfoById" resultType="com.test.o2o.entity.PersonInfo"
+            parameterType="Long">
+        <!-- 具体的sql -->
+        SELECT *
+        FROM
+        tb_person_info
+        WHERE
+        user_id = #{userId}
+    </select>
+
+    <select id="queryPersonInfoCount" resultType="int">
+        SELECT
+        count(1)
+        FROM
+        tb_person_info
+        <where>
+            <if test="personInfoCondition.userType !=null">
+                 user_type = #{personInfoCondition.userType}
+            </if>
+            <if test="personInfoCondition.name!=null">
+                and name like '%${personInfoCondition.name}%'
+            </if>
+            <if test="personInfoCondition.enableStatus!=null">
+                and enable_status = #{personInfoCondition.enableStatus}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateName">
+        update
+            tb_person_info
+        set
+            name = #{newname}
+        where
+            name = #{oldname}
+    </update>
+
+    <update id="updateGender">
+        update
+            tb_person_info
+        set
+            gender = #{newgender}
+        where
+            gender = #{oldgender}
+        and name = #{name}
+    </update>
+
+    <update id="updateEmail">
+        update
+            tb_person_info
+        set
+            email = #{newemail}
+        where
+            email = #{oldemail}
+            and name = #{name}
+    </update>
+
+
+</mapper>
