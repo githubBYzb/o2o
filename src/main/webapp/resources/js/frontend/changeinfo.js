@@ -31,7 +31,10 @@ function changecount() {
                     alert("修改成功");
                     //sessionStorage.setItem("yourusername",newcount);
                     document.cookie = "yourusername=" + newcount;
-                    window.location.reload(false);
+                    //刷新页面会导致cookie数组读取有误
+                    //window.location.reload(false);
+                    alert("请重新登录！")
+                    window.location.href = "/o2o/frontend/login";
                 }
             },
 
@@ -62,7 +65,10 @@ function changepwd() {
                     if (data.success){
                         alert("修改成功");
                         document.cookie = "yourpwd=" + newpwd2;
-                        window.location.reload(false);
+                        //刷新页面会导致cookie数组读取有误
+                        //window.location.reload(false);
+                        alert("请重新登录！")
+                        window.location.href = "/o2o/frontend/login";
                     }
                 },
 
@@ -97,7 +103,10 @@ function changename() {
                 if (data.success) {
                     alert("修改成功");
                     document.cookie = "yourname=" + newname;
-                    window.location.reload(false);
+                    //刷新页面会导致cookie数组读取有误
+                    //window.location.reload(false);
+                    alert("请重新登录！")
+                    window.location.href = "/o2o/frontend/login";
                 }
             },
 
@@ -126,7 +135,10 @@ function changegender() {
                 if (data.success) {
                     alert("修改成功");
                     document.cookie = "yourgender=" + newgender;
-                    window.location.reload(false);
+                    //刷新页面会导致cookie数组读取有误
+                    //window.location.reload(false);
+                    alert("请重新登录！")
+                    window.location.href = "/o2o/frontend/login";
                 }
             },
 
@@ -155,7 +167,10 @@ function changeemail() {
                 if (data.success) {
                     alert("修改成功");
                     document.cookie = "youremail=" + newemail;
-                    window.location.reload(false);
+                    //刷新页面会导致cookie数组读取有误
+                    //window.location.reload(false);
+                    alert("请重新登录！")
+                    window.location.href = "/o2o/frontend/login";
                 }
             },
 

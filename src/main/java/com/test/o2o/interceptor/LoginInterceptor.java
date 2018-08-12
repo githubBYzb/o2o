@@ -1,7 +1,6 @@
 package com.test.o2o.interceptor;
 
-import com.test.o2o.entity.LocalAuth;
-import org.springframework.ui.ModelMap;
+
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -40,29 +39,37 @@ public class LoginInterceptor implements HandlerInterceptor {
         //flag用来判断用户登录，默认为false
         boolean flag = false;
         //获取请求的路径
-        String path = request.getRequestURI();
-        System.out.println("RequestURI:" + path);
+        String path = request.getServletPath();
+        System.out.println("ServletPath:" + path);
         //判断是否要拦截
-        for (String s: IgnoredURL){
-            if ( path.contains(s)){
+        for (String s : IgnoredURL) {
+            if (path.contains(s)) {
                 flag = true;
                 break;
+            }
         }
 
-        }
         //拦截请求
-        if (!flag){
-            LocalAuth localAuth = (LocalAuth) request.getSession().getAttribute("lg");
-            //用户未登录
-            if (localAuth == null){
-                System.out.println("LoginInterceptor 拦截请求");
-                request.setAttribute("message","请先登录后再访问网站");
-                request.getRequestDispatcher("login").forward(request,response);
+        try {
+            Long user = (Long) request.getSession().getAttribute("user");
+            if (!flag){
+                //用户未登录
+                if ( user == null){
+                    System.out.println("LoginInterceptor 拦截请求");
+                    response.setContentType("text/html; charset=UTF-8");
+                    response.getWriter().print("<html><body><script type='text/javascript'>alert('请先登录后再访问！');window.location.href='/o2o/frontend/login'</script></body></html>");
+                    response.getWriter().close();
+                    //以下重定向和跳转都不生效，原因不明
+                    //request.getRequestDispatcher("/o2o/frontend/login").forward(request,response);
+                    //response.sendRedirect("/o2o/frontend/login");
+                }
+                else {
+                    System.out.println("LoginInterceptor 放行请求");
+                    flag = true;
+                }
             }
-            else {
-                System.out.println("LoginInterceptor 放行请求");
-                flag = true;
-            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return flag;
     }

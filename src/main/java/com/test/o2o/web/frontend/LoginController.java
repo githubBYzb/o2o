@@ -61,7 +61,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/logincheck", method = {RequestMethod.POST})
 	@ResponseBody
-	private Map<String, Object> logincheck(@RequestParam(value = "userName") String userName, @RequestParam(value = "password") String password,HttpSession session) {
+	private Map<String, Object> logincheck(@RequestParam(value = "userName") String userName, @RequestParam(value = "password") String password,HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<>();
 		LocalAuth localAuth = localAuthService.getLocalAuthPwdByUserName(userName);
 		PersonInfo personInfo = personInfoService.getPersonInfoById(Long.valueOf(localAuth.getUserId()));
@@ -75,9 +75,7 @@ public class LoginController {
 				modelMap.put("yourname",personInfo.getName());
 				modelMap.put("yourgender",personInfo.getGender());
 				modelMap.put("youremail",personInfo.getEmail());
-				LocalAuth localAuth_login = new LocalAuth();
-				localAuth_login.setLocalAuthId((long) 1);
-				session.setAttribute("lg",localAuth_login);
+				request.getSession().setAttribute("user",localAuth.getLocalAuthId());
 			} else {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", "密码错误");

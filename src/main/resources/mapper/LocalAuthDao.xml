@@ -35,6 +35,14 @@
             l.local_auth_id =#{userName}
     </select>
 
+    <!--<select id="queryLocalAuthPwdByUserName" resultMap="com.test.o2o.entity.LocalAuth" parameterType="String">
+        SELECT
+            *
+        FROM
+            tb_local_auth
+        WHERE
+            local_auth_id =#{userName}
+    </select>-->
 
    <update id="updataLocalAuthId">
        update

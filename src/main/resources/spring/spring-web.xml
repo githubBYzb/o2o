@@ -42,10 +42,16 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <!--拦截所有请求-->
-            <mvc:mapping path="/o2o"/>
+            <mvc:mapping path="/**"/>
+            <!--不拦截的URL-->
+            <mvc:exclude-mapping path="/logincheck"/>
+            <mvc:exclude-mapping path="/resources/js/**"/>
+            <mvc:exclude-mapping path="/resources/css/**"/>
+            <mvc:exclude-mapping path="/favicon.ico"/>
             <!--使用bean定义一个interceptor-->
             <bean class="com.test.o2o.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
 
 </beans>

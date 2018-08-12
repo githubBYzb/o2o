@@ -51,18 +51,18 @@ $(function(){
                 });
                 $('#shop-category').html(tempHtml);
                 $('#area').html(tempAreaHtml);
-            }
-        });
-    }
-
-    $('#submit').click(function () {
-        var shop = {};
-        if (isEdit) {
-            shop.shopId = shopId;
-        }
-        shop.shopName = $('#shop-name').val();
-        shop.shopAddr = $('#shop-addr').val();
         shop.phone = $('#shop-phone').val();
+    }
+});
+}
+
+$('#submit').click(function () {
+    var shop = {};
+    if (isEdit) {
+        shop.shopId = shopId;
+    }
+    shop.shopName = $('#shop-name').val();
+    shop.shopAddr = $('#shop-addr').val();
         shop.shopDesc = $('#shop-desc').val();
         shop.shopCategory = {
             shopCategoryId: $('#shop-category').find('option').not(function () {
